@@ -17,7 +17,7 @@
         "roave/security-advisories": "dev-master", 
         "evandotpro/edp-module-layouts": "dev-master",
         "zendframework/zend-mvc": "^3.0",
-        "zendframework/zend-navigation": "^3.0 || ^2.7",
+        "zendframework/zend-router": "^3.0",
         "codingmatters/kernel": "^1.0 || ^0.1"
     },
     "require-dev": {        

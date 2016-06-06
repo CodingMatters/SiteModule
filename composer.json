@@ -1,10 +1,10 @@
 {
-    "name": "codingmatters/zf-module-ini",
-    "description": "Skeleton module for ZF application",
+    "name": "codingmatters/site-module-ini",
+    "description": "Initial Site Module for ZF application",
     "license": "MIT",
     "type": "project",
     "keywords": ["ZF module"],
-    "homepage": "https://github.com/CodingMatters/ZFModuleIni/",
+    "homepage": "https://github.com/CodingMatters/SiteModule/",
     "authors": [
         {
             "name": "Gab Amba",

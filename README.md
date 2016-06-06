@@ -1,7 +1,7 @@
-Site Module
+Initial Site Module for ZF application
 ===========
 
-Initial Site Module for ZF application
+
 
 Features
 --------

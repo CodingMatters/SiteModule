@@ -18,7 +18,7 @@
         "evandotpro/edp-module-layouts": "dev-master",
         "zendframework/zend-mvc": "^3.0",
         "zendframework/zend-router": "^3.0",
-        "codingmatters/kernel": "^1.0 || ^0.1"
+        "codingmatters/kernel": "^1.0 || ~0.1"
     },
     "require-dev": {        
         "zendframework/zend-test": "^3.0",

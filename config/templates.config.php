@@ -3,13 +3,15 @@
 return [
     // Zend Framework Configuration
     'view_manager' => [
-        'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
+        'display_not_found_reason'  => true,
+        'display_exceptions'        => true,
+        'doctype'                   => 'HTML5',
+        'not_found_template'        => 'error/404',
+        'exception_template'        => 'error/index',
+        'layout'                    => 'default/layout',
         'template_map' => [
-            'layout/layout'             => __DIR__ . '/../view/layout/layout.phtml',
+            'default/layout'            => __DIR__ . '/../view/layout/default.phtml',
+            'site/layout'               => __DIR__ . '/../view/layout/site.phtml',
             'template/footer'           => __DIR__ . '/../view/layout/partial/footer.phtml',
             'template/navigation'       => __DIR__ . '/../view/layout/partial/navigation.phtml',
             'template/breadcrumbs'      => __DIR__ . '/../view/layout/partial/breadcrumbs.phtml',
@@ -29,9 +31,10 @@ return [
         'doctype'                   => 'HTML5',
         'not_found_template'        => 'error/404',
         'exception_template'        => 'error/index',
-        'layout'                    => "layout/layout",
+        'layout'                    => "default/layout",
         'map'       => [
-            'layout/layout'             => __DIR__ . '/../view/layout/layout.phtml',
+            'default/layout'            => __DIR__ . '/../view/layout/default.phtml',
+            'site/layout'               => __DIR__ . '/../view/layout/site.phtml',
             'template/footer'           => __DIR__ . '/../view/layout/partial/footer.phtml',
             'template/navigation'       => __DIR__ . '/../view/layout/partial/navigation.phtml',
             'template/breadcrumbs'      => __DIR__ . '/../view/layout/partial/breadcrumbs.phtml',
@@ -40,7 +43,7 @@ return [
             'error/index'               => __DIR__ . '/../view/error/index.phtml',
         ],
         'paths'     => [
-            'site'  => [__DIR__ . '/../view/page']
+            'site'  => [__DIR__ . '/../view']
         ]
     ],
 

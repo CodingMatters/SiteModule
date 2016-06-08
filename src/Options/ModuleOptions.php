@@ -37,9 +37,9 @@ class ModuleOptions extends AbstractOptions
 {
     protected $__strictMode__ = false;
 
-    protected $applicationName = 'MyApp';
+    protected $applicationName = '';
 
-    protected $organization = 'MyCompany';
+    protected $organization = '';
 
     protected $copyrightYear;
 

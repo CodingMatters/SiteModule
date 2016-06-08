@@ -28,16 +28,19 @@ $settings = [
     /**
      * Application Name
      */
-    //'application_name' => 'MyApp',
+    'application_name' => 'MyApp',
 
     /**
-     *
+     * Organization Info
      */
-    //'organization' => 'Object Coding Technologies, Inc.',
+    'organization' => 'Coding Matters, Inc.',
 
-    'copyright_year' => "2012",
+    /**
+     * Copyright year
+     */
+    'copyright_year' => date('Y'), // Pull Current Year
 ];
 
 return [
-    'myapp' => $settings
+    'site_settings' => $settings
 ];

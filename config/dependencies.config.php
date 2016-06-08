@@ -12,7 +12,7 @@ use Site\Factory;
 
 return [
     'factories'          => [
-        "Application\Options\ModuleOptions"     => Factory\ModuleOptionsFactory::class,
+        "Site\Options\ModuleOptions"     => Factory\ModuleOptionsFactory::class,
 
     ],
     'services'           => [],

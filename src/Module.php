@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2016 Coding Matters, Inc. (Gab Amba <gamba@gabbydgab.com>)
+ * Copyright (c) 2016, Coding Matters, Inc. (Gab Amba <gamba@gabbydgab.com>)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ class Module
         $moduleRouteListener->attach($app->getEventManager());
 
         $seviceManager = $app->getServiceManager();
-        $variables = $seviceManager->get("Application\Options\ModuleOptions");
+        $variables = $seviceManager->get("Site\Options\ModuleOptions");
 
         $viewModel = $event->getViewModel();
         $viewModel->setVariables($variables->toArray());

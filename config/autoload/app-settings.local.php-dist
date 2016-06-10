@@ -24,26 +24,24 @@
  * THE SOFTWARE.
  */
 
-namespace Site\Controller;
+$settings = [
+    /**
+     * Application Name
+     */
+    'application_name' => 'MyApp',
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+    /**
+     * Organization Info
+     */
+    'organization' => 'Your Organization',
 
-/**
- * Application\Controller\IndexController
- *
- * @package Application\Controller
- */
-class IndexController extends AbstractActionController
-{
-    public function indexAction()
-    {
-        return new ViewModel($this->getEvent()->getViewModel()->getVariables());
-    }
+    /**
+     * Copyright year
+     */
+    'copyright_year' => date('Y'),
+];
 
 
-    public function aboutAction()
-    {
-        return new ViewModel($this->getEvent()->getViewModel()->getVariables());
-    }
-}
+return [
+    'application_settings' => $settings
+];

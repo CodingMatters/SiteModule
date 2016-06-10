@@ -2,7 +2,7 @@
     "name": "codingmatters/site-module-ini",
     "description": "Initial Site Module for ZF application",
     "license": "MIT",
-    "type": "zend-module",
+    "type": "project",
     "keywords": ["ZF module"],
     "homepage": "https://github.com/CodingMatters/SiteModule/",
     "authors": [
@@ -13,8 +13,7 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0",
-        "composer/installers": "~1.0",
+        "php": "^5.6 || ^7.0",       
         "roave/security-advisories": "dev-master",
         "zendframework/zend-mvc": "^3.0"
     },

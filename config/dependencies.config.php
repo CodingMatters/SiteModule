@@ -6,15 +6,8 @@
  * @see https://zendframework.github.io/zend-servicemanager/configuring-the-service-manager/
  */
 
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Site\Controller;
-use Site\Factory;
-
 return [
-    'factories'          => [
-        "Site\Options\ModuleOptions"     => Factory\ModuleOptionsFactory::class,
-
-    ],
+    'factories'          => [],
     'services'           => [],
     'abstract_factories' => [],
     'delegators'         => [],

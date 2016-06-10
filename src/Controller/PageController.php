@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2014, contributors of Coding Matters.
+ * Copyright (c) 2016, Coding Matters, Inc. (Gab Amba <gamba@gabbydgab.com>)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,23 +24,25 @@
  * THE SOFTWARE.
  */
 
-$settings = [
-    /**
-     * Application Name
-     */
-    'application_name' => 'MyApp',
+namespace Site\Controller;
 
-    /**
-     * Organization Info
-     */
-    'organization' => 'Coding Matters, Inc.',
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
-    /**
-     * Copyright year
-     */
-    'copyright_year' => date('Y'), // Pull Current Year
-];
+class PageController extends AbstractActionController
+{
+    public function indexAction()
+    {
+        return new ViewModel();
+    }
 
-return [
-    'site_settings' => $settings
-];
+    public function aboutAction()
+    {
+        return new ViewModel();
+    }
+
+    public function contactUsAction()
+    {
+        return new ViewModel();
+    }
+}

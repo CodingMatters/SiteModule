@@ -34,19 +34,6 @@ class Module
 {
     private $config = [];
 
-    public function onBootstrap(MvcEvent $event)
-    {
-        $app = $event->getApplication();
-        $moduleRouteListener = new ModuleRouteListener();
-        $moduleRouteListener->attach($app->getEventManager());
-
-        $seviceManager = $app->getServiceManager();
-        $variables = $seviceManager->get("Site\Options\ModuleOptions");
-
-        $viewModel = $event->getViewModel();
-        $viewModel->setVariables($variables->toArray());
-    }
-
     /**
      * Return default configuration for zend-mvc applications.
      */
@@ -64,5 +51,49 @@ class Module
 
         // Overrides the default config to use Glob module config
         return array_merge_recursive($this->config, $provider->getGlobConfig());
+    }
+
+    /**
+     * Autoload site settings for variables and layouts
+     *
+     * @param MvcEvent $event
+     */
+    public function onBootstrap(MvcEvent $event)
+    {
+        $eventManager = $event->getApplication()->getEventManager();
+
+        $eventManager->attach('dispatch', [$this, 'configSiteVariables'], 1000);
+        $eventManager->getSharedManager()->attach(
+            'Zend\Mvc\Controller\AbstractController',
+            "dispatch",
+            [$this, 'configModuleLayout'],
+            1001
+        );
+
+        $listener = new ModuleRouteListener();
+        $listener->attach($eventManager);
+    }
+
+    public function configSiteVariables(MvcEvent $event)
+    {
+        // Fetch configuration
+        $config     = $event->getApplication()->getServiceManager()->get("Config");
+        $options    = (array_key_exists('application_settings', $config)) ? $config['application_settings'] : [];
+        $variables  = new ModuleOptions($options);
+
+        // Set configuration
+        $event->getViewModel()->setVariables($variables->toArray());
+    }
+
+    public function configModuleLayout(MvcEvent $event)
+    {
+        $controller      = $event->getTarget();
+        $controllerClass = get_class($controller);
+        $moduleNamespace = substr($controllerClass, 0, strrpos($controllerClass, '\\Controller'));
+
+        $config          = $event->getApplication()->getServiceManager()->get('config');
+        if (isset($config['module_layouts'][$moduleNamespace])) {
+            $controller->layout($config['module_layouts'][$moduleNamespace]);
+        }
     }
 }

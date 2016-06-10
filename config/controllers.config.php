@@ -11,6 +11,6 @@ use Site\Controller;
 
 return [
     'factories' => [
-        Controller\IndexController::class       => InvokableFactory::class,
+        Controller\PageController::class       => InvokableFactory::class,
     ]
 ];

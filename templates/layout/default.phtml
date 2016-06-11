@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?php 
+        <?php
             echo $this->headMeta()
                 ->appendName('viewport', 'width=device-width, initial-scale=1.0')
                 ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
@@ -33,24 +33,15 @@
         <header class="site-header">
             <?php echo $this->partial('partial/header'); ?>
         </header>
-        <main class="site-content">
+        <main id="site-content" class="container">
             <?php echo $this->content;?>
         </main>
-        <footer class="site-footer">
-            <?php echo $this->partial('partial/footer'); ?>
-            <div class="row">
-                <hr>
-                <div class="col-md-10 pull-left">
-                    Copyright &copy; <?php echo $this->layout()->copyright_year; ?> by
-                    <a href="<?php echo $this->url('home') ?>"> <?php echo $this->layout()->organization; ?></a>. 
-                    <?php echo 'All rights reserved.'; ?>
-                </div>>
-                <div class="cold-md-2 pull-right">
-                    A Proud partner of <a href="www.codingmatters.io">Coding Matters, Inc.</a>
-                </div>
-            </div>
-        </footer>
-        
+        <hr>
+        <footer id="site-footer" class="container">
+            <?php echo $this->partial('widget/banner/footer'); ?>
+            <hr>
+            <?php echo $this->partial('partial/footer'); ?>    
+        </footer>        
         <?php 
             /**
              * Scripts

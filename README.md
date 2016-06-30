@@ -1,9 +1,11 @@
-Initial Site Module for ZF application
+Site Module for ZF application
 ===========
 
+TO DO: 
+ - [ ] Home Page
+ - [ ] Contact Us Page
+ - [ ] About Us Page
 
 
-Features
---------
-
-TO DO 
+Installation
+----------
